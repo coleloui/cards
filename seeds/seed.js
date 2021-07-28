@@ -10,12 +10,12 @@ const seedDatabase = async () => {
   // const users =
   await User.bulkCreate(userSeedData);
 
-  // for (const card of cardSeedData) {
-  //   const newCard = await Card.create({
-  //     ...card,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
+  for (const card of cardSeedData) {
+    const newCard = await Card.create({
+      ...card,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
 
   process.exit(0);
 };
